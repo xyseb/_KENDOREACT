@@ -25,3 +25,5 @@ dist-ssr
 
 # VITEST
 coverage
+*storybook.log
+storybook-static
