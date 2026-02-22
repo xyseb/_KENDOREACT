@@ -654,3 +654,175 @@ Chrome DevTools → Coverage tab → run l’app → lignes CSS inutilisées sur
 
 Puppeteer ou Playwright peuvent générer un rapport CSS coverage automatiquement.
 
+# ⚛️ REACT
+
+## Type react
+React ne definit pas de type typescript mais uniquement javascript
+
+## Type @types/react
+[DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/react/index.d.ts)
+
+Voici tous les usages possibles de ces types utilitaires
+
+### 🧩 1. PropsWithChildren<P>
+✔️ Usage : ajouter children à un type de props
+```ts
+type BoxProps = PropsWithChildren<{ color: string }>;
+```
+Quand l’utiliser ?
+Composants simples
+
+Composants qui acceptent des enfants
+
+Composants qui ne forwardent pas de ref
+
+### 🧩 2. PropsWithoutRef<P>
+✔️ Usage : retirer ref d’un type
+```ts
+type Props = PropsWithoutRef<ComponentProps<"button">>;
+```
+Quand l’utiliser ?
+Tu wraps un composant qui accepte une ref
+
+Mais ton wrapper ne forwarde pas la ref
+
+### 🧩 3. PropsWithRef<P>
+✔️ Usage : ajouter une ref typée
+```ts
+type Props = PropsWithRef<{ onClick: () => void }>;
+```
+Quand l’utiliser ?
+Tu veux que ton composant accepte une ref
+
+Mais tu ne veux pas utiliser forwardRef
+
+### 🧩 4. ComponentProps<T>
+✔️ Usage : récupérer les props d’un composant ou élément JSX
+```ts
+type ButtonProps = ComponentProps<"button">;
+```
+Quand l’utiliser ?
+Tu veux cloner un composant
+
+Tu veux wrapper un composant
+
+Tu veux créer un composant polymorphique
+
+Tu veux extraire les props d’un composant externe
+
+### 🧩 5. ComponentPropsWithoutRef<T>
+✔️ Usage : récupérer les props d’un composant sans la ref
+```ts
+type DivProps = ComponentPropsWithoutRef<"div">;
+```
+Quand l’utiliser ?
+Tu wraps un composant HTML
+
+Tu ne forwardes pas la ref
+
+### 🧩 6. ComponentPropsWithRef<T>
+✔️ Usage : récupérer les props d’un composant avec la ref
+```ts
+type InputProps = ComponentPropsWithRef<"input">;
+```
+Quand l’utiliser ?
+Tu fais un wrapper avec forwardRef
+
+Tu veux que la ref soit correctement typée
+
+### 🧩 7. JSXElementConstructor<P>
+✔️ Usage : typer un composant polymorphique
+```ts
+type AsProp = JSXElementConstructor<any> | keyof JSX.IntrinsicElements;
+```
+Quand l’utiliser ?
+Composants polymorphiques (as="button")
+
+Composants qui acceptent un composant en prop
+
+### 🧩 8. ClassAttributes<T>
+✔️ Usage : typage interne pour les refs de classes
+Tu ne l’utilises presque jamais directement.
+
+🎯 Résumé final
+
+| Type                     | Sert à                  | Quand l’utiliser        |
+|--------------------------|-------------------------|-------------------------|
+| PropsWithChildren        | Ajouter children        | Composants simples      |
+| PropsWithoutRef          | Retirer ref             | Wrapper sans ref        |
+| PropsWithRef             | Ajouter ref             | Wrapper avec ref        |
+| ComponentProps           | Extraire props brutes   | Polymorphisme, wrappers |
+| ComponentPropsWithoutRef | Extraire props sans ref | Wrapper sans ref        |
+| ComponentPropsWithRef    | Extraire props avec ref | Wrapper avec ref        |
+| JSXElementConstructor    | Typage polymorphique    | as="button"             |
+| ClassAttributes          | Typage interne react    | Rarement utilisé        |
+
+## Type HTML
+
+### génériques
+
+| Type              | Description                                                    |
+|-------------------|----------------------------------------------------------------|
+| HTMLAttributes    | Attributs HTML génériques (id, className, style, data-*, etc.) |
+| AllHTMLAttributes | HTMLAttributes + attributs communs                             |
+| DOMAttributes     | Tous les handlers d’événements (onClick, onChange, etc.)       |
+| AriaAttributes    | Attributs ARIA                                                 |
+
+### spécifiques
+| Type                      | Élément HTML           |
+|---------------------------|------------------------|
+| AnchorHTMLAttributes      | `<a>`                  |
+| AudioHTMLAttributes       | `<audio>`              |
+| AreaHTMLAttributes        | `<area>`               |
+| BaseHTMLAttributes        | `<base>`               |
+| ButtonHTMLAttributes      | `<button>`             |
+| CanvasHTMLAttributes      | `<canvas>`             |
+| ColHTMLAttributes         | `<col>`                |
+| ColgroupHTMLAttributes    | `<colgroup>`           |
+| DataHTMLAttributes        | `<data>`               |
+| DetailsHTMLAttributes     | `<details>`            |
+| DialogHTMLAttributes      | `<dialog>`             |
+| EmbedHTMLAttributes       | `<embed>`              |
+| FieldsetHTMLAttributes    | `<fieldset>`           |
+| FormHTMLAttributes        | `<form>`               |
+| HtmlHTMLAttributes        | `<html>`               |
+| IframeHTMLAttributes      | `<iframe>`             |
+| ImgHTMLAttributes         | `<img>`                |
+| InputHTMLAttributes       | `<input>`              |
+| InsHTMLAttributes         | `<ins>`                |
+| LabelHTMLAttributes       | `<label>`              |
+| LiHTMLAttributes          | `<li>`                 |
+| LinkHTMLAttributes        | `<link>`               |
+| MapHTMLAttributes         | `<map>`                |
+| MediaHTMLAttributes       | `<audio>` / `<video>`  |
+| MetaHTMLAttributes        | `<meta>`               |
+| MeterHTMLAttributes       | `<meter>`              |
+| ObjectHTMLAttributes      | `<object>`             |
+| OlHTMLAttributes          | `<ol>`                 |
+| OptgroupHTMLAttributes    | `<optgroup>`           |
+| OptionHTMLAttributes      | `<option>`             |
+| OutputHTMLAttributes      | `<output>`             |
+| ParamHTMLAttributes       | `<param>`              |
+| ProgressHTMLAttributes    | `<progress>`           |
+| QuoteHTMLAttributes       | `<blockquote>` / `<q>` |
+| ScriptHTMLAttributes      | `<script>`             |
+| SelectHTMLAttributes      | `<select>`             |
+| SlotHTMLAttributes        | `<slot>`               |
+| SourceHTMLAttributes      | `<source>`             |
+| StyleHTMLAttributes       | `<style>`              |
+| TableHTMLAttributes       | `<table>`              |
+| TextareaHTMLAttributes    | `<textarea>`           |
+| TdHTMLAttributes          | `<td>`                 |
+| ThHTMLAttributes          | `<th>`                 |
+| TimeHTMLAttributes        | `<time>`               |
+| TrackHTMLAttributes       | `<track>`              |
+| VideoHTMLAttributes       | `<video>`              |
+| WebViewHTMLAttributes     | `<webview>` (Electron) |
+
+### Types internes utilisés pour construire les props HTML
+
+| Type | Description                                           |
+|------------------------|-------------------------------------|
+| DetailedHTMLPropsE, T> | Combine props HTML + gestion de ref |
+| SVGProps               | Props SVG                           |
+| SVGAttributes          | Attributs SVG                       |

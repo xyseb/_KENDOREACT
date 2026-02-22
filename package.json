@@ -15,7 +15,8 @@
     "test:typecheck": "vitest --typecheck",
     "test:e2e": "vitest run e2e",
     "test:cc": "vitest --clearCache",
-    "storybook": "storybook dev -p 6006",
+    "storybook": "storybook dev -p 6006 -h 127.0.0.1 --no-open --no-version-updates",
+    "storybook:info": "storybook info",
     "build-storybook": "storybook build"
   },
   "dependencies": {
@@ -40,6 +41,7 @@
     "typescript-eslint": "8.46.4",
     "vite": "7.2.4",
     "vitest": "4.0.18",
+<<<<<<< HEAD
     "storybook": "^10.2.8",
     "@storybook/react-vite": "^10.2.8",
     "@chromatic-com/storybook": "^5.0.1",
@@ -48,6 +50,17 @@
     "@storybook/addon-docs": "^10.2.8",
     "eslint-plugin-storybook": "^10.2.8",
     "playwright": "^1.58.2",
+=======
+    "storybook": "10.2.8",
+    "@storybook/react-vite": "10.2.8",
+    "@chromatic-com/storybook": "5.0.1",
+    "@storybook/addon-vitest": "10.2.8",
+    "@storybook/addon-a11y": "10.2.8",
+    "@storybook/addon-docs": "10.2.8",
+    "@storybook/addon-onboarding": "10.2.8",
+    "eslint-plugin-storybook": "10.2.8",
+    "playwright": "1.58.2",
+>>>>>>> f03d5831d0a2da50aa185a4f26f1df827407a208
     "@vitest/browser-playwright": "4.0.18",
     "@vitest/coverage-v8": "4.0.18"
   }

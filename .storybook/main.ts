@@ -11,6 +11,10 @@ const config: StorybookConfig = {
     "@storybook/addon-a11y",
     "@storybook/addon-docs"
   ],
-  "framework": "@storybook/react-vite"
+  "framework": "@storybook/react-vite",
+    core: {
+    disableTelemetry: true, // 👈 Disables telemetry
+    enableCrashReports: false, // 👈 Appends the crash reports to the telemetry events
+  },
 };
 export default config;

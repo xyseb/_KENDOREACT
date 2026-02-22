@@ -1,0 +1,196 @@
+{
+    "console log": {
+        "prefix": "§clog",
+        "body": ["console.log($0);"],
+        "description": "Console log"
+    },
+    "console table": {
+        "prefix": "§ctable",
+        "body": ["console.table({$0});"],
+        "description": "Console table"
+    },
+    "lambda": {
+        "prefix": "§lx",
+        "body": ["$1 => $0"],
+        "description": "lambda"
+    },
+    "React Component": {
+        "prefix": "§rtcomponent",
+        "scope": "typescriptreact",
+        "body": [
+            "// Functionnal component : ${TM_FILENAME_BASE}.tsx",
+            "import \"./${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}.scss\";",
+            "",
+            "type ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}Props = ${2|ComponentProps,ComponentPropsWithoutRef,ComponentPropsWithRef,PropsWithChildren,PropsWithoutRef,PropsWithRef|}$3{",
+            "    ${5://@TODO}",
+            "}$4;",
+            "",
+            "export default function ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}(props: Readonly<${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}Props>): JSX.Element {",
+            "    return (",
+            "        <${1:div} className=\"${TM_FILENAME_BASE/(.*)/${1:/kebabcase}/}\">$0</${1:div}>",
+            "    );",
+            "}"
+        ],
+        "description": "Créer un composant React TS"
+    },
+    "useState": {
+        "prefix": "§rtusestate",
+        "body": [
+            "const [${1:state/^([A-Z])/${1:/downcase}/}, set${1:state/^([a-zA-Z])/${1:/upcase}/}] = useState($0);"
+        ],
+        "description": "Créer un useState React TS"
+    },
+    "useEffect": {
+        "prefix": "§rtuseeffect",
+        "body": [
+            "useEffect(() => {",
+            "    $1",
+            "",
+            "    return () => {",
+            "        $2",
+            "    };",
+            "}, [$0]);"
+        ],
+        "description": "Créer un useEffect React TS"
+    },
+    "useRef": {
+        "prefix": "§rtuseref",
+        "body": [
+            "const ${1:ref/^([A-Z])/${1:/downcase}/} = useRef<${2:undefined}>($0);"
+        ],
+        "description": "Créer un useRef React TS"
+    },
+    "useMemo": {
+        "prefix": "§rtusememo",
+        "body": [
+            "const ${1:value/^([A-Z])/${1:/downcase}/} = useMemo(() => {",
+            "    return $2;",
+            "}, [$0]);"
+        ],
+        "description": "Créer un useMemo React TS"
+    },
+    "useCallback": {
+        "prefix": "§rtusecallback",
+        "body": [
+            "const ${1:callback/^([A-Z])/${1:/downcase}/} = useCallback(() => {",
+            "    $2",
+            "}, [$0]);"
+        ],
+        "description": "Créer un useCallback React TS"
+    },
+    "useContext": {
+        "prefix": "§rtusecontext",
+        "body": [
+            "const ${1:value/^([A-Z])/${1:/downcase}/} = useContext($0);"
+        ],
+        "description": "Créer un useContext React TS"
+    },
+    "useReducer": {
+        "prefix": "§rtusereducer",
+        "body": [
+            "const [state, dispatch] = useReducer(${1:reducer}, ${2:initialState});$0"
+        ]
+    },
+    "useId": {
+        "prefix": "§rtuseid",
+        "body": [
+            "const ${1:id/^([A-Z])/${1:/downcase}/} = useId();$0"
+        ]
+    },
+    "useTransition": {
+        "prefix": "§rtusetransition",
+        "body": [
+            "const [isPending, startTransition] = useTransition();$0"
+        ]
+    },
+    "useDeferredValue": {
+        "prefix": "§rtusedeferredvalue",
+        "body": [
+            "const ${1:deferred/^([A-Z])/${1:/downcase}/} = useDeferredValue(${2:value});$0"
+        ]
+    },
+    "useImperativeHandle": {
+        "prefix": "§rtuseimperativehandle",
+        "body": [
+            "useImperativeHandle(${1:ref/^([A-Z])/${1:/downcase}/}, () => ({",
+            "    $0",
+            "}));"
+        ]
+    },
+    "useLayoutEffect": {
+        "prefix": "§rtuselayouteffect",
+        "body": [
+            "useLayoutEffect(() => {",
+            "    $1",
+            "}, [$0]);"
+        ]
+    },
+    "useInsertionEffect": {
+        "prefix": "§rtuseinsertioneffect",
+        "body": [
+            "useInsertionEffect(() => {",
+            "    $1",
+            "}, [$0]);"
+        ]
+    },
+    "useSyncExternalStore": {
+        "prefix": "§rtusesyncexternalstore",
+        "body": [
+            "const ${1:state/^([A-Z])/${1:/downcase}/} = useSyncExternalStore(${2:subscribe}, ${3:getSnapshot});$0"
+        ]
+    },
+    "useOptimistic": {
+        "prefix": "§rtuseoptimistic",
+        "body": [
+            "const [${1:state/^([A-Z])/${1:/downcase}/}, addOptimistic] = useOptimistic(${2:initialState}, (${1:state}, ${3:value}) => {",
+            "    return $0;",
+            "});"
+        ]
+    },
+    "useActionState": {
+        "prefix": "§rtuseactionstate",
+        "body": [
+            "const [state, formAction] =    useActionState(${1:action}, ${2:initialState});$0"
+        ]
+    },
+    "vitest": {
+        "prefix": "§vitest",
+        "body": [
+            "import { $1 } from \"vitest\";",
+            "",
+            "$1(\"${2:text description}\", () =>",
+            "    $0",
+            "});",
+        ]
+    },
+    "vitest test": {
+        "prefix": "§vitestit",
+        "body": [
+            "it$2(\"$1\", $3() =>",
+            "    $0",
+            "});",
+        ]
+    },
+    "storybook story": {
+        "prefix": "§stbstorie",
+        "body": [
+            "import type { Meta, StoryObj } from '@storybook/react-vite';",
+            "import { ${1:MyComponent/^([a-zA-Z])/${1:/upcase}/} } from './${1:MyComponent/^([a-zA-Z])/${1:/upcase}/}';",
+            "",
+            "const meta = {",
+            "    component: ${1:MyComponent/^([a-zA-Z])/${1:/upcase}/},",
+            "} satisfies Meta<typeof ${1:MyComponent/^([a-zA-Z])/${1:/upcase}/}>;",
+            "",
+            "export default meta;",
+            "",
+            "type Story = StoryObj<typeof meta>;",
+            "",
+            "export const ${2:MyStory/^([a-zA-Z])/${1:/upcase}/}: Story = {",
+            "    args: {",
+            "$0       primary: true,",
+            "       label: 'My button',",
+            "    },",
+            "};",
+        ]
+    },
+}
