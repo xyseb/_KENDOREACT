@@ -6,6 +6,7 @@
   * [Sommaire](#sommaire)
   * [GET STARTED](#get-started)
 - [[[ PROJECT SETUP INFOS ]]](#-project-setup-infos-)
+  * [🛠 Tooling](#%F0%9F%9B%A0-tooling)
   * [🧰 Dépendances](#%F0%9F%A7%B0-dependances)
     + [1. **vitest**](#1-vitest)
     + [2. **@vitest/ui**](#2-vitestui)
@@ -28,6 +29,9 @@
 <br>
 
 # [[ PROJECT SETUP INFOS ]]
+
+## 🛠 Tooling
+Vous pouvez pointer manuellement un dossier de votre projet (ex. ici `./.vs/snippets`) dans Tools → Code Snippets Manager → Add ; cela rendra les snippets disponibles pour cet utilisateur
 
 ## 🧰 Dépendances
 

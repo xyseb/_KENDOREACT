@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>console log</Title>
+            <Shortcut>§clog</Shortcut>
+            <Description>Console log</Description>
+            <Author>Converted</Author>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="TypeScript"><![CDATA[console.log($end$);]]></Code>
+        </Snippet>
+    </CodeSnippet>
+
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>console table</Title>
+            <Shortcut>§ctable</Shortcut>
+            <Description>Console table</Description>
+            <Author>Converted</Author>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="TypeScript"><![CDATA[console.table({$end$});]]></Code>
+        </Snippet>
+    </CodeSnippet>
+
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>lambda</Title>
+            <Shortcut>§lx</Shortcut>
+            <Description>lambda</Description>
+            <Author>Converted</Author>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Declarations>
+                <Literal>
+                    <ID>arg</ID>
+                    <ToolTip>Argument</ToolTip>
+                    <Default>$1</Default>
+                </Literal>
+            </Declarations>
+            <Code Language="TypeScript"><![CDATA[$arg$ => $end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>React Component (TS)</Title>
+            <Shortcut>§rtcomponent</Shortcut>
+            <Description>Créer un composant React TS</Description>
+            <Author>Converted</Author>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Declarations>
+                <Literal>
+                    <ID>ComponentName</ID>
+                    <ToolTip>Nom du composant (PascalCase)</ToolTip>
+                    <Default>MyComponent</Default>
+                </Literal>
+                <Literal>
+                    <ID>Wrapper</ID>
+                    <ToolTip>Balise wrapper</ToolTip>
+                    <Default>div</Default>
+                </Literal>
+                <Literal>
+                    <ID>PropsType</ID>
+                    <ToolTip>Type de props</ToolTip>
+                    <Default>ComponentProps</Default>
+                </Literal>
+            </Declarations>
+            <Code Language="TypeScript"><![CDATA[// Functionnal component : $ComponentName$.tsx
+import "./$ComponentName$.scss";
+
+type $ComponentName$Props = $PropsType$ {
+    //$end$
+};
+
+export default function $ComponentName$(props: Readonly<$ComponentName$Props>): JSX.Element {
+    return (
+        <$Wrapper$ className="$ComponentName$">
+            $end$
+        </$Wrapper$>
+    );
+}]]></Code>
+        </Snippet>
+    </CodeSnippet>
+
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>useState (React TS)</Title>
+            <Shortcut>§rtusestate</Shortcut>
+            <Description>Créer un useState React TS</Description>
+            <Author>Converted</Author>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Declarations>
+                <Literal>
+                    <ID>state</ID>
+                    <ToolTip>Nom du state (camelCase)</ToolTip>
+                    <Default>value</Default>
+                </Literal>
+            </Declarations>
+            <Code Language="TypeScript"><![CDATA[const [$state$, set$state$] = useState($end$);]]></Code>
+        </Snippet>
+    </CodeSnippet>
+
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>useEffect (React TS)</Title>
+            <Shortcut>§rtuseeffect</Shortcut>
+            <Description>Créer un useEffect React TS</Description>
+            <Author>Converted</Author>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="TypeScript"><![CDATA[useEffect(() => {
+    $1
+
+    return () => {
+        $2
+    };
+}, [$end]);]]></Code>
+        </Snippet>
+    </CodeSnippet>
+
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>useRef (React TS)</Title>
+            <Shortcut>§rtuseref</Shortcut>
+            <Description>Créer un useRef React TS</Description>
+            <Author>Converted</Author>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Declarations>
+                <Literal>
+                    <ID>refName</ID>
+                    <ToolTip>Nom du ref</ToolTip>
+                    <Default>ref</Default>
+                </Literal>
+                <Literal>
+                    <ID>Type</ID>
+                    <ToolTip>Type générique</ToolTip>
+                    <Default>undefined</Default>
+                </Literal>
+            </Declarations>
+            <Code Language="TypeScript"><![CDATA[const $refName$ = useRef<$Type$>($end$);]]></Code>
+        </Snippet>
+    </CodeSnippet>
+
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>useMemo (React TS)</Title>
+            <Shortcut>§rtusememo</Shortcut>
+            <Description>Créer un useMemo React TS</Description>
+            <Author>Converted</Author>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Declarations>
+                <Literal>
+                    <ID>value</ID>
+                    <ToolTip>Nom de la valeur</ToolTip>
+                    <Default>value</Default>
+                </Literal>
+            </Declarations>
+            <Code Language="TypeScript"><![CDATA[const $value$ = useMemo(() => {
+    return $2;
+}, [$end]);]]></Code>
+        </Snippet>
+    </CodeSnippet>
+
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>useCallback (React TS)</Title>
+            <Shortcut>§rtusecallback</Shortcut>
+            <Description>Créer un useCallback React TS</Description>
+            <Author>Converted</Author>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Declarations>
+                <Literal>
+                    <ID>callback</ID>
+                    <ToolTip>Nom du callback</ToolTip>
+                    <Default>callback</Default>
+                </Literal>
+            </Declarations>
+            <Code Language="TypeScript"><![CDATA[const $callback$ = useCallback(() => {
+    $2
+}, [$end]);]]></Code>
+        </Snippet>
+    </CodeSnippet>
+
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>useContext (React TS)</Title>
+            <Shortcut>§rtusecontext</Shortcut>
+            <Description>Créer un useContext React TS</Description>
+            <Author>Converted</Author>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Declarations>
+                <Literal>
+                    <ID>value</ID>
+                    <ToolTip>Nom de la valeur</ToolTip>
+                    <Default>value</Default>
+                </Literal>
+            </Declarations>
+            <Code Language="TypeScript"><![CDATA[const $value$ = useContext($end$);]]></Code>
+        </Snippet>
+    </CodeSnippet>
+
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>useReducer (React TS)</Title>
+            <Shortcut>§rtusereducer</Shortcut>
+            <Description>useReducer</Description>
+            <Author>Converted</Author>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="TypeScript"><![CDATA[const [state, dispatch] = useReducer($1, $2);$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>useId (React TS)</Title>
+            <Shortcut>§rtuseid</Shortcut>
+            <Description>useId</Description>
+            <Author>Converted</Author>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="TypeScript"><![CDATA[const $1 = useId();$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>useTransition (React TS)</Title>
+            <Shortcut>§rtusetransition</Shortcut>
+            <Description>useTransition</Description>
+            <Author>Converted</Author>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="TypeScript"><![CDATA[const [isPending, startTransition] = useTransition();$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>useDeferredValue (React TS)</Title>
+            <Shortcut>§rtusedeferredvalue</Shortcut>
+            <Description>useDeferredValue</Description>
+            <Author>Converted</Author>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="TypeScript"><![CDATA[const $1 = useDeferredValue($2);$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>useImperativeHandle (React TS)</Title>
+            <Shortcut>§rtuseimperativehandle</Shortcut>
+            <Description>useImperativeHandle</Description>
+            <Author>Converted</Author>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="TypeScript"><![CDATA[useImperativeHandle($1, () => ({
+    $end$
+}));]]></Code>
+        </Snippet>
+    </CodeSnippet>
+
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>useLayoutEffect (React TS)</Title>
+            <Shortcut>§rtuselayouteffect</Shortcut>
+            <Description>useLayoutEffect</Description>
+            <Author>Converted</Author>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="TypeScript"><![CDATA[useLayoutEffect(() => {
+    $1
+}, [$end]);]]></Code>
+        </Snippet>
+    </CodeSnippet>
+
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>useInsertionEffect (React TS)</Title>
+            <Shortcut>§rtuseinsertioneffect</Shortcut>
+            <Description>useInsertionEffect</Description>
+            <Author>Converted</Author>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="TypeScript"><![CDATA[useInsertionEffect(() => {
+    $1
+}, [$end]);]]></Code>
+        </Snippet>
+    </CodeSnippet>
+
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>useSyncExternalStore (React TS)</Title>
+            <Shortcut>§rtusesyncexternalstore</Shortcut>
+            <Description>useSyncExternalStore</Description>
+            <Author>Converted</Author>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="TypeScript"><![CDATA[const $1 = useSyncExternalStore($2, $3);$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>useOptimistic (React TS)</Title>
+            <Shortcut>§rtuseoptimistic</Shortcut>
+            <Description>useOptimistic</Description>
+            <Author>Converted</Author>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="TypeScript"><![CDATA[const [$1, addOptimistic] = useOptimistic($2, ($1, $3) => {
+    return $end$;
+});]]></Code>
+        </Snippet>
+    </CodeSnippet>
+
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>useActionState (React TS)</Title>
+            <Shortcut>§rtuseactionstate</Shortcut>
+            <Description>useActionState</Description>
+            <Author>Converted</Author>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="TypeScript"><![CDATA[const [state, formAction] = useActionState($1, $2);$end$]]></Code>
+        </Snippet>
+    </CodeSnippet>
+
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>vitest</Title>
+            <Shortcut>§vitest</Shortcut>
+            <Description>vitest</Description>
+            <Author>Converted</Author>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="TypeScript"><![CDATA[import { $1 } from "vitest";
+
+$1("$2", () =>
+    $end$
+);]]></Code>
+        </Snippet>
+    </CodeSnippet>
+
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>vitest test</Title>
+            <Shortcut>§vitestit</Shortcut>
+            <Description>vitest it</Description>
+            <Author>Converted</Author>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Code Language="TypeScript"><![CDATA[it("$1", $2() =>
+    $end$
+);]]></Code>
+        </Snippet>
+    </CodeSnippet>
+
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>storybook story</Title>
+            <Shortcut>§stbstorie</Shortcut>
+            <Description>Storybook story</Description>
+            <Author>Converted</Author>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+            <Declarations>
+                <Literal>
+                    <ID>Component</ID>
+                    <ToolTip>Nom du composant</ToolTip>
+                    <Default>MyComponent</Default>
+                </Literal>
+                <Literal>
+                    <ID>StoryName</ID>
+                    <ToolTip>Nom de la story</ToolTip>
+                    <Default>MyStory</Default>
+                </Literal>
+            </Declarations>
+            <Code Language="TypeScript"><![CDATA[import type { Meta, StoryObj } from '@storybook/react-vite';
+import { $Component$ } from './$Component$';
+
+const meta = {
+    component: $Component$,
+} satisfies Meta<typeof $Component$>;
+
+export default meta;
+
+type Story = StoryObj<typeof meta>;
+
+export const $StoryName$: Story = {
+    args: {
+        $end$       primary: true,
+       label: 'My button',
+    },
+};]]></Code>
+        </Snippet>
+    </CodeSnippet>
+
+</CodeSnippets>
